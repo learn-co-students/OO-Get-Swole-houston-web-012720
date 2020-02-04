@@ -22,9 +22,10 @@ class Lifter
   end
 
   def self.avg_lift
-    lift_totals = self.all.map {|l| l.lift_total}
-    total = lift_totals.sum {|sum = 0, total| sum +=total}
+    total = self.all.sum {|sum = 0, lifter| sum += lifter.lift_total}
     avg = total / self.all.length
+
+
   end
 
   def membership_cost
